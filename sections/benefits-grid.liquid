@@ -1,0 +1,55 @@
+{% schema %}
+{
+  "name": "Benefits Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "لماذا تختار آلاف السيدات المغربيات BALURIX؟"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "معايير صيدلانية صارمة، نقاء نباتي، والتزام كامل بصحتك وجمالك الطبيعي."
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-benefits">
+  <div class="balurix-container">
+    <div class="section-header text-center">
+      <span class="section-tag">ضمان الجودة والنقاء</span>
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+      <p class="section-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🍃</div>
+        <h3 class="benefit-title">نقاء نباتي 100%</h3>
+        <p class="benefit-desc">مستخلصات نباتية معصورة على البارد وخالية تماماً من الملونات الصناعية، المواد الحافظة، أو السكر المضاف.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3 class="benefit-title">امتصاص حيوي سريع</h3>
+        <p class="benefit-desc">صيغة سائلة سريعة الامتصاص يمتصها الجهاز الهضمي والدم في دقائق دون إجهاد الكبد أو المعدة.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🔬</div>
+        <h3 class="benefit-title">تركيبات مدروسة مخبرياً</h3>
+        <p class="benefit-desc">تم تطوير نسب الفعالية بعناية لتمنح نتائج ملموسة في تنقية الهضم ونضارة البشرة خلال 14 يوماً فقط.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3 class="benefit-title">ثقة وراحة تامة (COD)</h3>
+        <p class="benefit-desc">شحن بالمجان لجميع مدن وقرى المغرب، مع حق فتح الطرد ومعاينته قبل دفع أي درهم للموزع.</p>
+      </div>
+    </div>
+  </div>
+</section>

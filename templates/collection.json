@@ -1,0 +1,24 @@
+{
+  "name": "Collection template",
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 12
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "استشيري خبيرتنا لاختيار الباقة الأنسب لبشرتك",
+        "text": "فريقنا متواجد على مدار اليوم لمساعدتك مجاناً عبر واتساب.",
+        "button_label": "تواصل مع خبير العناية عبر واتساب",
+        "button_link": "https://wa.me/212636460996"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta"
+  ]
+}

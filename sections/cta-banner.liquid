@@ -1,0 +1,59 @@
+{% schema %}
+{
+  "name": "Call To Action Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "جاهزة لبدء رحلة التغيير واستعادة صفاء بشرتك وهضمك؟"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "انضمي إلى أكثر من 3,400 سيدة في المغرب غيرن روتينهن اليومي بقطرات الكلوروفيل الطبيعي. توصيل مجاني والدفع بعد المعاينة."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "اطلبِ الآن مع التوصيل المجاني 🚚"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/products/chlorophyll-drops"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-cta-banner">
+  <div class="balurix-container">
+    <div class="cta-banner-inner">
+      <div class="cta-badge">🌿 فرصة محدودة لدفعة هذا الأسبوع</div>
+      <h2 class="cta-title">{{ section.settings.title }}</h2>
+      <p class="cta-text">{{ section.settings.text }}</p>
+      
+      <div class="cta-buttons-group">
+        <a href="{{ section.settings.button_link }}" class="btn btn-cream btn-lg">
+          {{ section.settings.button_label }}
+        </a>
+        <a 
+          href="https://wa.me/212636460996?text={{ 'السلام عليكم، أريد الاستفادة من عرض التوصيل المجاني لقطرات BALURIX' | url_encode }}" 
+          class="btn btn-outline-white btn-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>💬 طلب فوري عبر واتساب</span>
+        </a>
+      </div>
+
+      <div class="cta-trust-note">
+        <span>🇲🇦 لا تدفعي أي شيء الآن — الدفع نقداً عند استلام ومعاينة المنتج لباب منزلك</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+{% schema %}
+{
+  "name": "Page Content",
+  "settings": []
+}
+{% endschema %}
+
+<div class="balurix-standard-page">
+  <div class="balurix-container page-inner">
+    <div class="page-header">
+      <h1 class="page-title">{{ page.title | default: 'عن BALURIX' }}</h1>
+    </div>
+
+    <div class="page-content rte">
+      {% if page.content != blank %}
+        {{ page.content }}
+      {% else %}
+        <div class="brand-about-content">
+          <p class="lead">
+            <strong>BALURIX</strong> هي علامة مغربية متخصصة في حلول العناية الطبيعية المبتكرة. نؤمن بأن الجمال الحقيقي يبدأ من صحة الجسم الداخلية وتوازنه الحيوي.
+          </p>
+
+          <div class="about-feature-box">
+            <h3>فلسفتنا في العمل:</h3>
+            <ul>
+              <li><strong>النقاء النباتي:</strong> نختار أجود خلاصات الأعشاب العضوية المصنعة وفق أعلى المعايير الصيدلانية الدولية.</li>
+              <li><strong>الشفافية التامة:</strong> بدون ملينات قاسية، بدون إضافات ضارة، وبدون وعود وهمية.</li>
+              <li><strong>خدمة عملاء قريبة منك:</strong> توصيل مجاني وسريع في جميع ربوع المملكة، مع حق المعاينة قبل الأداء.</li>
+            </ul>
+          </div>
+
+          <div class="page-contact-strip">
+            <p>هل لديك أي استفسار حول استخدام منتجاتنا أو طلبك؟</p>
+            <a href="https://wa.me/212636460996" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+              💬 تواصلي معنا مباشرة عبر واتساب
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

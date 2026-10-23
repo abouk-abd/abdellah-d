@@ -1,0 +1,22 @@
+{
+  "name": "Default page template",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "هل لديك أي سؤال؟ نحن هنا للمساعدة دائماً",
+        "text": "تواصل مع خدمة عملاء BALURIX للحصول على إجابات فورية.",
+        "button_label": "راسلنا على واتساب 💬",
+        "button_link": "https://wa.me/212636460996"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Cart template",
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "show_shipping_note": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "أضيفي لطلبكِ واستفيدي من نفس الشحنة المجانية"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

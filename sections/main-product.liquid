@@ -1,0 +1,221 @@
+{% schema %}
+{
+  "name": "Product Main Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_quick_cod_form",
+      "label": "Enable Fast COD Checkout Form on Page",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "WhatsApp Order Number",
+      "default": "+212636460996"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-product-main">
+  <div class="balurix-container">
+    <div class="product-layout-grid">
+      <!-- Media Gallery -->
+      <div class="product-gallery">
+        <div class="main-image-frame">
+          <span class="product-badge">المنتج البطل الأكثر طلباً 🔥</span>
+          {% if product.featured_image %}
+            <img 
+              src="{{ product.featured_image | img_url: '800x800' }}" 
+              alt="{{ product.title | escape }}"
+              class="main-product-img"
+              id="MainProductImage"
+            >
+          {% else %}
+            <div class="product-placeholder-hero">
+              <span class="glyph-hero">🌿💧</span>
+              <span class="brand-watermark">BALURIX</span>
+            </div>
+          {% endif %}
+        </div>
+        <div class="product-badges-row">
+          <div class="badge-item">
+            <span>🌿 مستخلص نباتي 100%</span>
+          </div>
+          <div class="badge-item">
+            <span>🔬 مفحوص مخبرياً</span>
+          </div>
+          <div class="badge-item">
+            <span>🚚 توصيل مجاني بالمغرب</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Information & Order Box -->
+      <div class="product-info-column">
+        <div class="product-meta">
+          <span class="product-brand-tag">PURE GREEN LAB &bull; BALURIX</span>
+          <h1 class="product-page-title">{{ product.title | default: 'قطرات الكلوروفيل النباتي المركز' }}</h1>
+          <p class="product-tagline">تنقية الجهاز الهضمي والدم، إزالة الغازات ونضارة فورية للبشرة من الداخل</p>
+
+          <div class="product-review-summary">
+            <span class="stars">★★★★★</span>
+            <span class="rating-number">4.9/5</span>
+            <span class="reviews-count">({{ product.reviews_count | default: '1,240' }} تقييم موثق)</span>
+            <span class="verified-buyer-badge">✔️ تم شراؤه أكثر من 3,400+ مرة</span>
+          </div>
+
+          <div class="product-pricing-box">
+            <span class="current-price">{{ product.price | default: '289' }} <span class="currency">د.م</span></span>
+            <span class="original-price">{{ product.compare_at_price | default: '350' }} د.م</span>
+            <span class="discount-pill">وفر 61 د.م + توصيل مجاني اليوم</span>
+          </div>
+        </div>
+
+        <!-- Pack Bundles / Quantity Offers -->
+        <div class="packs-selector-box">
+          <h3 class="packs-title">اختر الباقة المناسبة لكِ:</h3>
+          <div class="packs-options">
+            <label class="pack-radio-label active">
+              <input type="radio" name="pack_choice" value="pack-1" checked>
+              <div class="pack-details">
+                <strong>باقة التجربة (عبوة واحدة)</strong>
+                <p>تكفي لمدة 30 يوماً من الاستخدام اليومي المنتظم</p>
+              </div>
+              <div class="pack-price-tag">289 د.م</div>
+            </label>
+
+            <label class="pack-radio-label popular-pack">
+              <span class="popular-ribbon">الأكثر طلباً وتوفيراً 🔥</span>
+              <input type="radio" name="pack_choice" value="pack-2">
+              <div class="pack-details">
+                <strong>باقة التوفير (عبوتان)</strong>
+                <p>ديتوكس مكثف أو لمشاركتها مع أختك أو والدتك</p>
+              </div>
+              <div class="pack-price-tag">
+                <span class="promo-price">449 د.م</span>
+                <span class="save-tag">وفر 129 د.م</span>
+              </div>
+            </label>
+
+            <label class="pack-radio-label">
+              <input type="radio" name="pack_choice" value="pack-3">
+              <div class="pack-details">
+                <strong>باقة الجمال الشامل (كلوروفيل + كولاجين)</strong>
+                <p>تنقية داخلية وبناء نضارة ومرونة البشرة بأكياس الكولاجين البحري</p>
+              </div>
+              <div class="pack-price-tag">
+                <span class="promo-price">499 د.م</span>
+                <span class="save-tag">وفر 151 د.م</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Fast COD Form Directly inside Product Page -->
+        <div class="product-cod-form-container" id="cod-order-box">
+          <div class="form-header">
+            <h3>استمارة الطلب السريع (الدفع عند الاستلام 🇲🇦)</h3>
+            <p>أدخلي معلوماتك وسيتم الاتصال بك لتأكيد طلبك وإرساله لباب منزلك بالمجان</p>
+          </div>
+
+          <form action="/cart/add" method="post" class="balurix-cod-form">
+            <div class="form-group">
+              <label for="customer_name">الاسم الكامل *</label>
+              <input type="text" id="customer_name" name="properties[Full Name]" placeholder="مثال: مريم العلمي" required class="form-input">
+            </div>
+
+            <div class="form-group">
+              <label for="customer_phone">رقم الهاتف للتواصل وتأكيد التوصيل *</label>
+              <input type="tel" id="customer_phone" name="properties[Phone]" placeholder="06XXXXXXXX أو 07XXXXXXXX" required class="form-input" dir="ltr">
+            </div>
+
+            <div class="form-group">
+              <label for="customer_city">المدينة *</label>
+              <select id="customer_city" name="properties[City]" required class="form-select">
+                <option value="" disabled selected>اختاري مدينتك...</option>
+                <option value="الدار البيضاء">الدار البيضاء (Casablanca)</option>
+                <option value="الرباط">الرباط (Rabat)</option>
+                <option value="مراكش">مراكش (Marrakech)</option>
+                <option value="طنجة">طنجة (Tanger)</option>
+                <option value="فاس">فاس (Fès)</option>
+                <option value="أكادير">أكادير (Agadir)</option>
+                <option value="القنيطرة">القنيطرة (Kénitra)</option>
+                <option value="وجدة">وجدة (Oujda)</option>
+                <option value="مكناس">مكناس (Meknès)</option>
+                <option value="تطوان">تطوان (Tétouan)</option>
+                <option value="تمارة">تمارة (Témara)</option>
+                <option value="المحمدية">المحمدية (Mohammedia)</option>
+                <option value="سلا">سلا (Salé)</option>
+                <option value="مدينة أخرى">مدينة أو قرية أخرى في المغرب</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="customer_address">عنوان التوصيل أو الحي</label>
+              <input type="text" id="customer_address" name="properties[Address]" placeholder="مثال: حي الرياض، شارع النخيل، إقامة 4" class="form-input">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg submit-cod-btn">
+              <span>تأكيد طلبي الآن — الدفع عند الاستلام (289 د.م) 🛒</span>
+            </button>
+          </form>
+
+          <div class="whatsapp-instant-row">
+            <span>أو تفضلين الطلب عبر واتساب مباشرة؟</span>
+            <a 
+              href="https://wa.me/212636460996?text={{ 'السلام عليكم، أريد طلب قطرات الكلوروفيل من BALURIX' | url_encode }}" 
+              class="btn-whatsapp-link"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              💬 اضغطي هنا للطلب عبر واتساب
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Accordions: Ingredients, Benefits, Usage -->
+        <div class="product-accordions">
+          <details class="accordion-item" open>
+            <summary class="accordion-header">
+              <span>🌿 المكونات والتركيز النشط</span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="accordion-content">
+              <p><strong>100% Pure Chlorophyllin Complex + Antioxidant Phyto-Complex</strong></p>
+              <p>مستخلص مائي نقي مستخلص من أوراق التوت البري ونبات الفالفا العضوي، خالٍ من الغلوتين، المشتقات الحيوانية، الكحول، والسكر.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <span>💧 طريقة الاستعمال الصحيحة</span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="accordion-content">
+              <ol>
+                <li>أضيفي من 10 إلى 15 قطرة في كأس ماء بارد أو فاتر كل صباح على الريق.</li>
+                <li>حركي بلطف واشربي الكوب قبل وجبة الإفطار بـ 20 دقيقة.</li>
+                <li>ينصح بشرب ما لا يقل عن لترين من الماء على مدار اليوم لنتائج مضاعفة وسريعة.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <span>🚚 تفاصيل التوصيل والضمان</span>
+              <span class="chevron">▾</span>
+            </summary>
+            <div class="accordion-content">
+              <ul>
+                <li>التوصيل بالمجان لجميع أنحاء المغرب خلال 24 إلى 48 ساعة.</li>
+                <li>الدفع نقداً بعد استلامك ومعاينتك للعلبة والتأكد من جودتها وأصالتها.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

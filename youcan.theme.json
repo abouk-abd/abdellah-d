@@ -1,0 +1,13 @@
+{
+  "name": "BALURIX Premium Natural Care",
+  "version": "1.0.0",
+  "author": "BALURIX Laboratoires",
+  "framework": "youcan-liquid",
+  "support_email": "support@balurix.com",
+  "features": [
+    "rtl-ready",
+    "cod-optimized",
+    "science-backed-showcase",
+    "whatsapp-checkout-sync"
+  ]
+}

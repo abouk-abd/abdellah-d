@@ -1,0 +1,24 @@
+{
+  "name": "List collections template",
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "مجموعات العناية من BALURIX"
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "العناية الطبيعية الذكية تبدأ من هنا",
+        "text": "شحن مجاني وسريع في 24 إلى 48 ساعة والدفع بعد المعاينة.",
+        "button_label": "تصفح المنتج البطل",
+        "button_link": "/products/chlorophyll-drops"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta"
+  ]
+}

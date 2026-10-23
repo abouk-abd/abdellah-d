@@ -1,0 +1,65 @@
+{% comment %}
+  BALURIX Product Card Component
+  Accepts:
+  - product: {Object} Liquid product object
+  - show_badge: {Boolean}
+  - show_rating: {Boolean}
+{% endcomment %}
+
+<article class="balurix-card product-card">
+  <div class="product-card-image-wrap">
+    {% if product.metafields.custom.badge or product.tags contains 'featured' %}
+      <span class="product-badge">{{ product.metafields.custom.badge | default: 'الأكثر طلباً 🔥' }}</span>
+    {% endif %}
+    
+    <a href="{{ product.url | default: '/products/chlorophyll-drops' }}" class="product-card-link">
+      {% if product.featured_image %}
+        <img 
+          src="{{ product.featured_image | img_url: '600x600' }}" 
+          alt="{{ product.title | escape }}" 
+          loading="lazy" 
+          width="400" 
+          height="400"
+          class="product-image"
+        >
+      {% else %}
+        <div class="product-image-fallback">
+          <span class="product-glyph">🌿</span>
+        </div>
+      {% endif %}
+    </a>
+  </div>
+
+  <div class="product-card-content">
+    {% if product.type != blank %}
+      <span class="product-category">{{ product.type }}</span>
+    {% endif %}
+
+    <h3 class="product-title">
+      <a href="{{ product.url | default: '/products/chlorophyll-drops' }}">
+        {{ product.title | default: 'قطرات الكلوروفيل المركز' }}
+      </a>
+    </h3>
+
+    {% if product.metafields.custom.concern != blank %}
+      <p class="product-concern">🎯 الفائدة: {{ product.metafields.custom.concern }}</p>
+    {% endif %}
+
+    <div class="product-rating">
+      <span class="stars">★★★★★</span>
+      <span class="rating-val">4.9</span>
+      <span class="reviews-count">({{ product.reviews_count | default: '1,240' }} تقييم)</span>
+    </div>
+
+    <div class="product-card-footer">
+      {% render 'price', product: product %}
+      
+      <form method="post" action="/cart/add" class="quick-add-form">
+        <input type="hidden" name="id" value="{{ product.variants.first.id | default: 1 }}">
+        <button type="submit" class="btn btn-primary btn-sm quick-add-btn">
+          <span>اطلب الآن</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</article>

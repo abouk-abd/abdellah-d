@@ -1,0 +1,156 @@
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Top Badge Text",
+      "default": "✨ التركيبة الصيدلانية رقم 1 بالمغرب لراحة الجهاز الهضمي والقولون"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "ودّعي انتفاخ البطن المزعج والغازات.. واستعيدي راحة هضمك وخفة بطنك في 14 يوماً فقط!"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "كبسولات Balurix GUT RELIEF الأصلية: تركيبة صيدلانية متطورة بالبروبيوتيك الحيوي (200mg) وخلاصات الشمر والزنجبيل والإينولين. راحة هضمية فورية وتنظيم حركة الأمعاء بدون أدوية كيميائية."
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_text",
+      "label": "Primary CTA Button Text",
+      "default": "اطلبِ الآن — الدفع عند الاستلام 🛒"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_link",
+      "label": "Primary CTA Link",
+      "default": "/products/chlorophyll-drops"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_cta_text",
+      "label": "WhatsApp Button Text",
+      "default": "💬 للطلب السريع عبر واتساب"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-hero">
+  <div class="balurix-container hero-grid">
+    <!-- Text Content -->
+    <div class="hero-content">
+      <div class="hero-pill-badge">
+        <span class="pill-dot"></span>
+        <span>{{ section.settings.badge_text }}</span>
+      </div>
+
+      <h1 class="hero-title">
+        {{ section.settings.headline }}
+      </h1>
+
+      <p class="hero-subtitle">
+        {{ section.settings.subheadline }}
+      </p>
+
+      <ul class="hero-bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">🌿</span>
+          <div>
+            <strong>مستخلص نقي فائق التركيز:</strong> قطرات قليلة في كأس ماء صباحاً تكفي لتنشيط جسدك طوال اليوم.
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">🫧</span>
+          <div>
+            <strong>راحة هضمية سريعة:</strong> وداعاً للغازات والانتفاخ والشعور بالثقل بعد الوجبات.
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✨</span>
+          <div>
+            <strong>صفاء ونضارة البشرة:</strong> يزيل السموم المتراكمة ويقلل حب الشباب الهرموني من الجذور.
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">🇲🇦</span>
+          <div>
+            <strong>توصيل مجاني وسريع:</strong> لباب منزلك مع حق المعاينة قبل دفع أي درهم.
+          </div>
+        </li>
+      </ul>
+
+      <div class="hero-actions">
+        <a href="{{ section.settings.primary_cta_link }}" class="btn btn-primary btn-lg hero-cta-btn">
+          {{ section.settings.primary_cta_text }}
+        </a>
+        <a 
+          href="https://wa.me/212636460996?text={{ 'السلام عليكم، أود طلب قطرات الكلوروفيل المركز من BALURIX' | url_encode }}" 
+          class="btn btn-secondary btn-lg hero-whatsapp-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ section.settings.whatsapp_cta_text }}
+        </a>
+      </div>
+
+      <div class="hero-social-proof">
+        <div class="proof-avatars">
+          <span class="avatar">👩🏻</span>
+          <span class="avatar">🧕🏼</span>
+          <span class="avatar">👩🏽</span>
+          <span class="avatar">👩🏼</span>
+        </div>
+        <div class="proof-text">
+          <div class="stars">★★★★★</div>
+          <span>أكثر من <strong>3,400+ سيدة</strong> في المغرب بدأن رحلة الديتوكس الطبيعي</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual / Video Showcase -->
+    <div class="hero-visual">
+      <div class="hero-card-frame">
+        <div class="hero-visual-badge">
+          <span>شاهد السحر البصري 💧</span>
+        </div>
+        
+        <div class="hero-media-wrapper">
+          <div class="drops-in-water-animation">
+            <div class="water-glass">
+              <div class="water-liquid">
+                <div class="chlorophyll-plume plume-1"></div>
+                <div class="chlorophyll-plume plume-2"></div>
+                <div class="chlorophyll-plume plume-3"></div>
+              </div>
+              <div class="dropper-element">
+                <div class="dropper-bulb"></div>
+                <div class="dropper-glass"></div>
+                <div class="drop-falling"></div>
+              </div>
+            </div>
+          </div>
+          <div class="media-caption">
+            <strong>قطرات في كأس ماء بارد</strong>
+            <span>مستخلص نباتي نقي يذوب بانسيابية فائقة لامتصاص حيوي فوري</span>
+          </div>
+        </div>
+
+        <div class="hero-guarantee-ribbon">
+          <div class="guarantee-chip">
+            <span>🛡️ ضمان الرضا أو الاسترجاع</span>
+          </div>
+          <div class="guarantee-chip">
+            <span>🔬 مصادق مخبرياً</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

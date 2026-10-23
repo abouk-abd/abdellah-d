@@ -1,0 +1,22 @@
+{
+  "name": "404 Not Found",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "الصفحة غير موجودة",
+        "text": "عذراً، الصفحة التي تبحثين عنها غير متوفرة. يمكنك العودة للصفحة الرئيسية واستكشاف منتجاتنا.",
+        "button_label": "العودة للرئيسية",
+        "button_link": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta"
+  ]
+}

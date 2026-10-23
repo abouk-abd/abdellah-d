@@ -1,0 +1,40 @@
+{
+  "general": {
+    "direction": "ltr",
+    "brand_name": "BALURIX",
+    "search": "Rechercher...",
+    "free_shipping": "Livraison Gratuite Partout au Maroc | Paiement à la Livraison",
+    "view_cart": "Voir le panier",
+    "checkout": "Commander - Paiement à la livraison",
+    "contact_whatsapp": "Contact WhatsApp",
+    "read_more": "En savoir plus",
+    "all_rights_reserved": "Tous droits réservés à BALURIX"
+  },
+  "home": {
+    "hero_title": "Soins botaniques d'excellence pour votre équilibre et votre éclat",
+    "hero_subtitle": "Formulations scientifiques d'origine naturelle pour purifier votre organisme et révéler la jeunesse de votre peau.",
+    "cta_shop": "Découvrir la gamme",
+    "featured_products": "Nos Produits Phares",
+    "brand_story_title": "La Philosophie BALURIX : La Science au Cœur de la Nature",
+    "benefits_title": "Pourquoi Choisir BALURIX ?"
+  },
+  "products": {
+    "price_currency": "MAD",
+    "add_to_cart": "Ajouter au panier",
+    "buy_now_cod": "Commander - Paiement Cash",
+    "out_of_stock": "Rupture de stock temporaire",
+    "in_stock": "En stock",
+    "active_ingredients": "Actifs Purs",
+    "how_to_use": "Conseils d'utilisation",
+    "delivery_note": "Livraison offerte sous 24-48h avec vérification du colis avant paiement."
+  },
+  "cart": {
+    "title": "Votre Panier",
+    "empty": "Votre panier est vide pour le moment",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "free": "Gratuite",
+    "total": "Total TTC",
+    "proceed_to_checkout": "Finaliser ma commande (Paiement à la livraison)"
+  }
+}

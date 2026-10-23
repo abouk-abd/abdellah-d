@@ -1,0 +1,64 @@
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "الأسئلة الشائعة حول قطرات BALURIX"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-faq-section">
+  <div class="balurix-container">
+    <div class="section-header text-center">
+      <span class="section-tag">إجابات واضحة وشفافة</span>
+      <h2 class="section-title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-question">
+          <span>متى أبدأ بملاحظة النتائج الإيجابية؟</span>
+          <span class="faq-icon">▾</span>
+        </summary>
+        <div class="faq-answer">
+          <p>تلاحظ غالبية السيدات راحة سريعة في الجهاز الهضمي واختفاء ثقل البطن والغازات خلال الـ 48 إلى 72 ساعة الأولى. أما صفاء البشرة ونضارتها فيظهر بشكل جلي بدءاً من اليوم العاشر إلى الرابع عشر مع استمرار التنقية والتخلص من السموم.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>هل للمنتج أي أضرار أو آثار جانبية؟</span>
+          <span class="faq-icon">▾</span>
+        </summary>
+        <div class="faq-answer">
+          <p>قطرات الكلوروفيل المركز من BALURIX مستخلصة من أوراق نباتية طبيعية 100% ومفحوصة مخبرياً، وخالية تماماً من الملينات الكيميائية أو الكافيين. لا تسبب أي مغص أو تعود.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>كيف يتم التوصيل والدفع؟</span>
+          <span class="faq-icon">▾</span>
+        </summary>
+        <div class="faq-answer">
+          <p>التوصيل مجاني 100% لجميع المدن المغربية. نقوم بشحن طلبك خلال 24 إلى 48 ساعة، ولا تدفعين أي درهم حتى تستلمي طلبيتك وتتحققي من العلبة وتتأكدي من سلامتها.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>هل المنتج مناسب للحوامل والمرضعات؟</span>
+          <span class="faq-icon">▾</span>
+        </summary>
+        <div class="faq-answer">
+          <p>الكلوروفيل مكمل غذائي نباتي طبيعي وآمن بشكل عام، ولكن كقاعدة ذهبية طبية نوصي دائماً الحوامل والمرضعات باستشارة طبيبهن المتابع قبل إدخال أي مكمل غذائي جديد لروتنهن اليومي.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

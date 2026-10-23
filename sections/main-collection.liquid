@@ -1,0 +1,123 @@
+{% schema %}
+{
+  "name": "Collection Products",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "label": "Products per page",
+      "default": 12
+    }
+  ]
+}
+{% endschema %}
+
+<div class="balurix-collection-page">
+  <div class="balurix-container">
+    <!-- Collection Header -->
+    <div class="collection-header">
+      <span class="collection-tag">مجموعات BALURIX الطبيعية</span>
+      <h1 class="collection-title">{{ collection.title | default: 'جميع حلول العناية الطبيعية' }}</h1>
+      <p class="collection-description">
+        {{ collection.description | default: 'اكتشفي تشكيلة منتجات BALURIX المصممة علمياً لتمنحك نقاء داخلياً وإشراقة طبيعية ملموسة.' }}
+      </p>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="balurix-products-grid">
+      {% if collection.products.size > 0 %}
+        {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      {% else %}
+        <!-- Default BALURIX Product Lineup -->
+        <article class="balurix-card product-card">
+          <div class="product-card-image-wrap">
+            <span class="product-badge">المنتج البطل 🔥</span>
+            <a href="/products/chlorophyll-drops" class="product-card-link">
+              <div class="product-img-box"><span class="product-botanical-glyph">💧🌿</span></div>
+            </a>
+          </div>
+          <div class="product-card-content">
+            <span class="product-category">PURE GREEN LAB</span>
+            <h3 class="product-title"><a href="/products/chlorophyll-drops">قطرات الكلوروفيل النباتي المركز</a></h3>
+            <p class="product-concern">🎯 تنقية الهضم والدم، إزالة الغازات ونضارة البشرة</p>
+            <div class="product-card-footer">
+              <div class="balurix-price-wrapper">
+                <span class="balurix-price-current">289 <span class="currency">د.م</span></span>
+                <span class="balurix-price-compare">350 د.م</span>
+              </div>
+              <a href="/products/chlorophyll-drops" class="btn btn-primary btn-sm quick-add-btn">اطلب الآن</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="balurix-card product-card">
+          <div class="product-card-image-wrap">
+            <span class="product-badge badge-collagen">نضارة وبناء خلايا ✨</span>
+            <a href="/products/marine-collagen" class="product-card-link">
+              <div class="product-img-box"><span class="product-botanical-glyph">🌊🌸</span></div>
+            </a>
+          </div>
+          <div class="product-card-content">
+            <span class="product-category">CELLULAR RADIANCE</span>
+            <h3 class="product-title"><a href="/products/marine-collagen">أكياس الكولاجين البحري + فيتامين C</a></h3>
+            <p class="product-concern">🎯 ملء خطوط الوجه، شد ترهلات الجلد، وترطيب الأعماق</p>
+            <div class="product-card-footer">
+              <div class="balurix-price-wrapper">
+                <span class="balurix-price-current">299 <span class="currency">د.م</span></span>
+                <span class="balurix-price-compare">380 د.م</span>
+              </div>
+              <a href="/products/marine-collagen" class="btn btn-primary btn-sm quick-add-btn">اطلب الآن</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="balurix-card product-card">
+          <div class="product-card-image-wrap">
+            <span class="product-badge badge-mist">كثافة وإنبات 🌱</span>
+            <a href="/products/rosemary-mist" class="product-card-link">
+              <div class="product-img-box"><span class="product-botanical-glyph">🌿🧴</span></div>
+            </a>
+          </div>
+          <div class="product-card-content">
+            <span class="product-category">TRICHOLOGY LAB</span>
+            <h3 class="product-title"><a href="/products/rosemary-mist">رذاذ الروزماري والبيبتيدات لإنبات الشعر</a></h3>
+            <p class="product-concern">🎯 تقوية البصيلات والحد من التساقط الموسمي</p>
+            <div class="product-card-footer">
+              <div class="balurix-price-wrapper">
+                <span class="balurix-price-current">249 <span class="currency">د.م</span></span>
+                <span class="balurix-price-compare">320 د.م</span>
+              </div>
+              <a href="/products/rosemary-mist" class="btn btn-primary btn-sm quick-add-btn">اطلب الآن</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="balurix-card product-card">
+          <div class="product-card-image-wrap">
+            <span class="product-badge badge-sleep">نوم عميق وراحة 🌙</span>
+            <a href="/products/magnesium-elixir" class="product-card-link">
+              <div class="product-img-box"><span class="product-botanical-glyph">🌙💤</span></div>
+            </a>
+          </div>
+          <div class="product-card-content">
+            <span class="product-category">CIRCADIAN WELLNESS</span>
+            <h3 class="product-title"><a href="/products/magnesium-elixir">إكسير المغنيسيوم وأعشاب النوم الهادئ</a></h3>
+            <p class="product-concern">🎯 علاج الأرق وتخفيف انتفاخ الوجه الصباحي</p>
+            <div class="product-card-footer">
+              <div class="balurix-price-wrapper">
+                <span class="balurix-price-current">249 <span class="currency">د.م</span></span>
+                <span class="balurix-price-compare">310 د.م</span>
+              </div>
+              <a href="/products/magnesium-elixir" class="btn btn-primary btn-sm quick-add-btn">اطلب الآن</a>
+            </div>
+          </div>
+        </article>
+      {% endif %}
+    </div>
+  </div>
+</div>

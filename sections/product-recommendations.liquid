@@ -1,0 +1,60 @@
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "منتجات يوصى بها مع هذا المنتج"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-recommendations">
+  <div class="balurix-container">
+    <div class="section-header text-center">
+      <span class="section-tag">العناية التكميلية المتطورة</span>
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="recommendations-grid">
+      <!-- Addon 1: Marine Collagen -->
+      <div class="addon-card">
+        <div class="addon-badge">يكمل الكلوروفيل تماماً</div>
+        <h4>أكياس الكولاجين البحري + فيتامين C</h4>
+        <p>الكلوروفيل يخلصك من السموم، والكولاجين يعيد ملء خطوط الوجه وترطيب الأعماق.</p>
+        <div class="addon-pricing">
+          <span class="addon-price">299 د.م</span>
+          <span class="addon-old">380 د.م</span>
+        </div>
+        <a href="/products/marine-collagen" class="btn btn-outline-forest btn-sm">عرض التفاصيل</a>
+      </div>
+
+      <!-- Addon 2: Scalp Rosemary Mist -->
+      <div class="addon-card">
+        <div class="addon-badge">عناية مكثفة بالشعر</div>
+        <h4>رذاذ الروزماري والبيبتيدات لإنبات الشعر</h4>
+        <p>محلول مائي غير دهني ينشط البصيلات ويحد من التساقط الموسمي والهرموني.</p>
+        <div class="addon-pricing">
+          <span class="addon-price">249 د.م</span>
+          <span class="addon-old">320 د.م</span>
+        </div>
+        <a href="/products/rosemary-mist" class="btn btn-outline-forest btn-sm">عرض التفاصيل</a>
+      </div>
+
+      <!-- Addon 3: Deep Sleep & Anti-Stress Elixir -->
+      <div class="addon-card">
+        <div class="addon-badge">نوم عميق وراحة</div>
+        <h4>إكسير المغنيسيوم وأعشاب الاسترخاء</h4>
+        <p>يخفض هرمون التوتر ويمنحك نوماً هادئاً لتستيقظي ببشرة مشرقة ومرتاحة.</p>
+        <div class="addon-pricing">
+          <span class="addon-price">249 د.م</span>
+          <span class="addon-old">310 د.م</span>
+        </div>
+        <a href="/products/magnesium-elixir" class="btn btn-outline-forest btn-sm">عرض التفاصيل</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Tajawal', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom styling for luxury cosmetic polish */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #1b4332;
+  color: #ffffff;
+}
+
+/* Hide scrollbar for clean horizontal pill scrolling if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

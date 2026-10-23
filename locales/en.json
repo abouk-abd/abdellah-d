@@ -1,0 +1,40 @@
+{
+  "general": {
+    "direction": "ltr",
+    "brand_name": "BALURIX",
+    "search": "Search...",
+    "free_shipping": "Free Shipping in Morocco | Cash on Delivery",
+    "view_cart": "View Cart",
+    "checkout": "Checkout - Cash on Delivery",
+    "contact_whatsapp": "Contact WhatsApp",
+    "read_more": "Read More",
+    "all_rights_reserved": "All rights reserved by BALURIX"
+  },
+  "home": {
+    "hero_title": "Botanical Wellness for Radiant Glow & Gut Balance",
+    "hero_subtitle": "Science-backed natural formulations crafted with pure botanicals to restore internal harmony and vibrant skin.",
+    "cta_shop": "Shop Collection",
+    "featured_products": "Featured Botanical Formulas",
+    "brand_story_title": "The BALURIX Philosophy: Science Meets Pure Nature",
+    "benefits_title": "Why Choose BALURIX?"
+  },
+  "products": {
+    "price_currency": "MAD",
+    "add_to_cart": "Add to Cart",
+    "buy_now_cod": "Order Now - Cash on Delivery",
+    "out_of_stock": "Temporarily Out of Stock",
+    "in_stock": "In Stock",
+    "active_ingredients": "Active Ingredients",
+    "how_to_use": "Suggested Usage",
+    "delivery_note": "Free delivery in 24-48h with parcel inspection before cash payment."
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is currently empty",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "proceed_to_checkout": "Proceed to Checkout (Cash on Delivery)"
+  }
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "BALURIX Premium Natural Care",
+    "theme_author": "BALURIX",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://balurix.com/docs",
+    "theme_support_url": "https://balurix.com/support"
+  },
+  {
+    "name": "Colors & Branding",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_forest_green",
+        "label": "Forest Green (Primary)",
+        "default": "#0B3D2E"
+      },
+      {
+        "type": "color",
+        "id": "color_leaf_green",
+        "label": "Leaf Green (Accent)",
+        "default": "#3E8E49"
+      },
+      {
+        "type": "color",
+        "id": "color_sage_green",
+        "label": "Sage Green (Muted)",
+        "default": "#DCE8D9"
+      },
+      {
+        "type": "color",
+        "id": "color_warm_cream",
+        "label": "Warm Cream (Background)",
+        "default": "#F8F6EF"
+      },
+      {
+        "type": "color",
+        "id": "color_white",
+        "label": "White (Surfaces)",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "select",
+        "id": "font_arabic",
+        "label": "Arabic Font",
+        "options": [
+          { "value": "Almarai", "label": "Almarai" },
+          { "value": "Tajawal", "label": "Tajawal" }
+        ],
+        "default": "Almarai"
+      },
+      {
+        "type": "select",
+        "id": "font_latin",
+        "label": "Latin Font",
+        "options": [
+          { "value": "Poppins", "label": "Poppins" },
+          { "value": "Plus Jakarta Sans", "label": "Plus Jakarta Sans" }
+        ],
+        "default": "Poppins"
+      }
+    ]
+  },
+  {
+    "name": "Morocco Cash on Delivery (COD)",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "WhatsApp Contact Number",
+        "default": "+212636460996"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_free_shipping_banner",
+        "label": "Enable Free Shipping Morocco Banner",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_quick_whatsapp_buy",
+        "label": "Enable Quick WhatsApp Buy Button",
+        "default": true
+      }
+    ]
+  }
+]

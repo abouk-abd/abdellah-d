@@ -1,0 +1,116 @@
+{% schema %}
+{
+  "name": "Cart Page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_shipping_note",
+      "label": "Show Free Shipping Note",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
+
+<div class="balurix-cart-page">
+  <div class="balurix-container">
+    <div class="cart-header text-center">
+      <h1 class="cart-title">سلة المشتريات</h1>
+      <p class="cart-free-shipping-bar">
+        🎉 مبروك! طلبك مؤهل لـ <strong>التوصيل المجاني</strong> لجميع مدن المغرب
+      </p>
+    </div>
+
+    {% if cart.item_count > 0 %}
+      <div class="cart-layout-grid">
+        <!-- Cart Items -->
+        <div class="cart-items-wrapper">
+          <form action="/cart" method="post" id="cart-form">
+            <table class="cart-items-table">
+              <thead>
+                <tr>
+                  <th>المنتج</th>
+                  <th>الكمية</th>
+                  <th>المجموع</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in cart.items %}
+                  <tr class="cart-item-row">
+                    <td class="cart-product-cell">
+                      <div class="cart-product-info">
+                        <strong>{{ item.title }}</strong>
+                        <span class="cart-item-price">{{ item.price | default: 289 }} د.م</span>
+                      </div>
+                    </td>
+                    <td class="cart-quantity-cell">
+                      <input 
+                        type="number" 
+                        name="updates[]" 
+                        id="updates_{{ item.key }}" 
+                        value="{{ item.quantity }}" 
+                        min="0"
+                        class="cart-qty-input"
+                      >
+                    </td>
+                    <td class="cart-total-cell">
+                      <strong>{{ item.line_price | default: 289 }} د.م</strong>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </form>
+        </div>
+
+        <!-- Cart Summary & Direct COD Checkout -->
+        <div class="cart-summary-box">
+          <h3>ملخص الطلب</h3>
+          <div class="summary-line">
+            <span>المجموع الفرعي:</span>
+            <strong>{{ cart.total_price | default: 289 }} د.م</strong>
+          </div>
+          <div class="summary-line">
+            <span>مصاريف التوصيل (جميع مدن المغرب):</span>
+            <strong class="text-success">مجاناً (0 د.م)</strong>
+          </div>
+          <hr class="summary-divider">
+          <div class="summary-line total-line">
+            <span>المبلغ الإجمالي للدفع عند الاستلام:</span>
+            <strong class="final-price">{{ cart.total_price | default: 289 }} د.م</strong>
+          </div>
+
+          <!-- Quick COD Order Form -->
+          <div class="cart-cod-direct-form">
+            <h4>إتمام الطلب السريع (الدفع عند الاستلام)</h4>
+            <form action="/checkout" method="post">
+              <input type="text" name="name" placeholder="الاسم الكامل" required class="form-input">
+              <input type="tel" name="phone" placeholder="رقم الهاتف (للتوصيل)" required class="form-input" dir="ltr">
+              <select name="city" required class="form-select">
+                <option value="" disabled selected>اختاري مدينتك...</option>
+                <option value="الدار البيضاء">الدار البيضاء</option>
+                <option value="الرباط">الرباط</option>
+                <option value="مراكش">مراكش</option>
+                <option value="طنجة">طنجة</option>
+                <option value="فاس">فاس</option>
+                <option value="أكادير">أكادير</option>
+                <option value="مدينة أخرى">مدينة أخرى بالمغرب</option>
+              </select>
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                <span>تأكيد الطلب الآن 🛒</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <!-- Empty Cart State -->
+      <div class="cart-empty-state text-center">
+        <div class="empty-cart-icon">🛒</div>
+        <h2>سلة المشتريات فارغة حالياً</h2>
+        <p>ابدأي باكتشاف باقات ومنتجات BALURIX الطبيعية واستمتعي بالشحن المجاني.</p>
+        <a href="/" class="btn btn-primary btn-lg">تصفح المنتجات الآن</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

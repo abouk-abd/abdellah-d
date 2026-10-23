@@ -1,0 +1,67 @@
+{
+  "name": "Home page",
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "badge_text": "✨ التركيبة العشبية المركزة رقم 1 بالمغرب",
+        "headline": "تخلصي من انتفاخ البطن المزعج واستعيدي نضارة بشرتك في 14 يوماً فقط.. وبطريقة طبيعية 100%!",
+        "subheadline": "إكسير الكلوروفيل النباتي المركز: الحل العلمي البديل للكريمات الكيميائية وأدوية الهضم المؤقتة. تنقية شاملة للجسم، هضم خفيف، وإشراقة طبيعية تلاحظينها من الأسبوع الأول.",
+        "primary_cta_text": "اطلبِ الآن — الدفع عند الاستلام 🛒",
+        "primary_cta_link": "/products/chlorophyll-drops",
+        "whatsapp_cta_text": "💬 للطلب السريع عبر واتساب"
+      }
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {
+        "section_title": "لماذا لا تجدي كريمات التجميل وحدها نفعاً؟",
+        "section_subtitle": "البشرة مرآة لصحة جهازك الهضمي. 80% من مشاكل الحبوب والشحوب والانتفاخ تبدأ من تراكم السموم وبطء حركة الأمعاء."
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "عائلة BALURIX للعناية المتكاملة",
+        "subheading": "منتجات طبيعية مدعومة بالعلم والأبحاث لتعزيز الجمال الحيوي والصحة الداخلية."
+      }
+    },
+    "clinical_proof": {
+      "type": "clinical-proof",
+      "settings": {
+        "heading": "نتائج سريرية وتجارب مخبرية موثقة"
+      }
+    },
+    "benefits": {
+      "type": "benefits-grid",
+      "settings": {
+        "title": "لماذا تختار آلاف السيدات المغربيات BALURIX؟",
+        "subtitle": "معايير صيدلانية صارمة، نقاء نباتي، والتزام كامل بصحتك وجمالك الطبيعي."
+      }
+    },
+    "faq": {
+      "type": "product-faq",
+      "settings": {
+        "title": "الأسئلة الشائعة حول قطرات BALURIX"
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "جاهزة لبدء رحلة التغيير واستعادة صفاء بشرتك وهضمك؟",
+        "text": "انضمي إلى أكثر من 3,400 سيدة في المغرب غيرن روتينهن اليومي بقطرات الكلوروفيل الطبيعي. توصيل مجاني والدفع بعد المعاينة.",
+        "button_label": "اطلبِ الآن مع التوصيل المجاني 🚚",
+        "button_link": "/products/chlorophyll-drops"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "brand_story",
+    "featured_products",
+    "clinical_proof",
+    "benefits",
+    "faq",
+    "cta"
+  ]
+}

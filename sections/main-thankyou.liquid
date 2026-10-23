@@ -1,0 +1,51 @@
+{% schema %}
+{
+  "name": "Thank You Page",
+  "settings": []
+}
+{% endschema %}
+
+<div class="balurix-thankyou-page">
+  <div class="balurix-container text-center thankyou-inner">
+    <div class="thankyou-check-circle">✓</div>
+    <span class="thankyou-badge">تم استلام طلبك بنجاح!</span>
+    <h1 class="thankyou-title">شكراً لثقتكِ بـ BALURIX 🌿</h1>
+    
+    <div class="thankyou-info-card">
+      <h3>ما هي الخطوة القادمة؟</h3>
+      <div class="steps-flow">
+        <div class="step-item">
+          <span class="step-num">1</span>
+          <strong>مكالمة تأكيد سريعة:</strong>
+          <p>سيتصل بكِ فريق خدمة العملاء خلال ساعات لتأكيد العنوان وموعد التوصيل المناسب لكِ.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <strong>تجهيز الشحنة:</strong>
+          <p>يتم تغليف طلبك بعناية مع هداياك المجانية وتسليمه لمندوب التوصيل المعتمد.</p>
+        </div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <strong>المعاينة والدفع عند الاستلام:</strong>
+          <p>افتحي الطرد، عايني طلبك، ثم ادفعي نقداً للموزع عند باب بيتك.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="thankyou-support-row">
+      <p>هل تودين تسريع الشحن أو تعديل تفاصيل طلبك؟</p>
+      <a 
+        href="https://wa.me/212636460996?text={{ 'السلام عليكم، قمت للتو بتقديم طلب عبر المتجر وأود تأكيده' | url_encode }}" 
+        class="btn btn-secondary btn-lg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        💬 تأكيد فوري عبر واتساب
+      </a>
+    </div>
+
+    <div class="back-home-link">
+      <a href="/">العودة إلى الصفحة الرئيسية &larr;</a>
+    </div>
+  </div>
+</div>

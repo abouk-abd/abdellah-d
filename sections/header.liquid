@@ -1,0 +1,68 @@
+{% schema %}
+{
+  "name": "Header & Announcement",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Bar Text",
+      "default": "🚚 توصيل بالمجان لجميع مدن المغرب | الدفع نقداً بعد استلام ومعاينة طلبك"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "WhatsApp Order Number",
+      "default": "+212636460996"
+    }
+  ]
+}
+{% endschema %}
+
+<!-- Top Announcement Bar -->
+<div class="balurix-announcement-bar">
+  <div class="balurix-container balurix-announcement-inner">
+    <div class="balurix-announcement-item">
+      <span>{{ section.settings.announcement_text }}</span>
+    </div>
+    <div class="balurix-announcement-timer">
+      <span class="timer-badge">⏳ دفعة هذا الأسبوع محدودة</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navigation Bar -->
+<header class="balurix-header">
+  <div class="balurix-container balurix-header-inner">
+    <!-- Brand Logo -->
+    <a href="/" class="balurix-logo">
+      <span class="logo-mark">B</span>
+      <div class="logo-text">
+        <span class="logo-name">BALURIX</span>
+        <span class="logo-sub">NATURAL CARE</span>
+      </div>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="balurix-nav">
+      <a href="/" class="nav-link">الرئيسية</a>
+      <a href="/collections/all" class="nav-link">المجموعات</a>
+      <a href="/products/chlorophyll-drops" class="nav-link">قطرات الكلوروفيل</a>
+      <a href="/pages/about" class="nav-link">عن BALURIX</a>
+      <a href="/pages/shipping" class="nav-link">التوصيل والدفع</a>
+    </nav>
+
+    <!-- Header Actions (Search, Cart, Direct COD) -->
+    <div class="balurix-header-actions">
+      <a href="/search" class="header-action-btn" aria-label="بحث">
+        {% render 'icon-search' %}
+      </a>
+      <a href="/cart" class="header-action-btn cart-btn" aria-label="سلة المشتريات">
+        {% render 'icon-cart' %}
+        <span class="cart-count">0</span>
+      </a>
+      <a href="/#order-form" class="balurix-btn-primary balurix-btn-sm">
+        <span>اطلبِ الآن (COD)</span>
+      </a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,73 @@
+{% schema %}
+{
+  "name": "Collections List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "مجموعات العناية من BALURIX"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="balurix-list-collections">
+  <div class="balurix-container">
+    <div class="section-header text-center">
+      <span class="section-tag">اكتشفي حسب احتياجك</span>
+      <h1 class="section-title">{{ section.settings.title }}</h1>
+      <p class="section-subtitle">روتينات متخصصة ومصممة بعناية لاحتياجات جسمك وبشرتك وشعرك</p>
+    </div>
+
+    <div class="collections-grid">
+      <!-- Collection 1: Detox & Digestion -->
+      <a href="/collections/detox" class="collection-category-card">
+        <div class="collection-bg green-tone">
+          <span class="col-icon">🌿</span>
+        </div>
+        <div class="collection-card-info">
+          <h3>تنقية الهضم والديتوكس الداخلي</h3>
+          <p>قطرات الكلوروفيل المركز والمستخلصات النباتية لتنظيف القولون والدم</p>
+          <span class="col-link-text">تصفح المنتجات &larr;</span>
+        </div>
+      </a>
+
+      <!-- Collection 2: Skin Youth & Collagen -->
+      <a href="/collections/skin" class="collection-category-card">
+        <div class="collection-bg rose-tone">
+          <span class="col-icon">✨</span>
+        </div>
+        <div class="collection-card-info">
+          <h3>نضارة البشرة والكولاجين</h3>
+          <p>ببتيدات الكولاجين البحري والفيتامينات لمرونة وامتلاء الخلايا</p>
+          <span class="col-link-text">تصفح المنتجات &larr;</span>
+        </div>
+      </a>
+
+      <!-- Collection 3: Hair Growth & Scalp -->
+      <a href="/collections/hair" class="collection-category-card">
+        <div class="collection-bg sage-tone">
+          <span class="col-icon">🌱</span>
+        </div>
+        <div class="collection-card-info">
+          <h3>كثافة الشعر وإنبات البصيلات</h3>
+          <p>بخاخات الروزماري الطبية والببتيدات لتحفيز الجذور وتقليل التساقط</p>
+          <span class="col-link-text">تصفح المنتجات &larr;</span>
+        </div>
+      </a>
+
+      <!-- Collection 4: Sleep & Anti-Stress -->
+      <a href="/collections/wellness" class="collection-category-card">
+        <div class="collection-bg blue-tone">
+          <span class="col-icon">🌙</span>
+        </div>
+        <div class="collection-card-info">
+          <h3>الاسترخاء وجودة النوم</h3>
+          <p>مغنيسيوم جلايسينات وخلاصات الأعشاب لراحة الأعصاب وتخفيف التوتر</p>
+          <span class="col-link-text">تصفح المنتجات &larr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

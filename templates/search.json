@@ -1,0 +1,22 @@
+{
+  "name": "Search template",
+  "sections": {
+    "main": {
+      "type": "main-search",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "لم تجدي ما تبحثين عنه؟",
+        "text": "تحدثي مع مستشارتنا عبر واتساب لمساعدتك في اختيار الروتين المناسب.",
+        "button_label": "مراسلة عبر واتساب",
+        "button_link": "https://wa.me/212636460996"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta"
+  ]
+}

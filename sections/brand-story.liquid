@@ -1,0 +1,73 @@
+{% schema %}
+{
+  "name": "Brand Story & Problem",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "لماذا لا تجدي كريمات التجميل وحدها نفعاً؟"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "البشرة مرآة لصحة جهازك الهضمي. 80% من مشاكل الحبوب والشحوب والانتفاخ تبدأ من تراكم السموم وبطء حركة الأمعاء."
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-brand-story">
+  <div class="balurix-container">
+    <div class="section-header text-center">
+      <span class="section-tag">الحقيقة العلمية وراء نضارة البشرة</span>
+      <h2 class="section-title">{{ section.settings.section_title }}</h2>
+      <p class="section-subtitle">{{ section.settings.section_subtitle }}</p>
+    </div>
+
+    <div class="comparison-grid">
+      <!-- Pain point 1 -->
+      <div class="pain-card">
+        <div class="pain-icon-wrapper error-tone">
+          <span>❌</span>
+        </div>
+        <h3>المعالجة السطحية المؤقتة</h3>
+        <p>إنفاق مبالغ طائلة على كريمات التقشير ومستحضرات الأساس لإخفاء العيوب، بينما تعود الحبوب والبقع فور التوقف عنها لأن السبب الداخلي لم يعالج.</p>
+      </div>
+
+      <!-- Pain point 2 -->
+      <div class="pain-card">
+        <div class="pain-icon-wrapper error-tone">
+          <span>⚠️</span>
+        </div>
+        <h3>ثقل البطن والانتفاخ المستمر</h3>
+        <p>الشعور بالامتلاء والغازات حتى بعد شرب كوب ماء أو وجبة خفيفة، مما يسبب الإحراج والضيق ويجعل ملابسك المفضلة غير مريحة.</p>
+      </div>
+
+      <!-- Pain point 3 -->
+      <div class="pain-card">
+        <div class="pain-icon-wrapper success-tone">
+          <span>🌿</span>
+        </div>
+        <h3>حل BALURIX: العناية من الداخل أولاً</h3>
+        <p>بفضل جزيئات الكلوروفيلين الشبيهة بهيموجلوبين الدم، يتم تنظيف الكبد والأمعاء وإمداد الخلايا بالأكسجين لاستعادة توهجك الطبيعي في 14 يوماً فقط.</p>
+      </div>
+    </div>
+
+    <div class="brand-stats-row">
+      <div class="stat-box">
+        <span class="stat-number">94%</span>
+        <span class="stat-label">لاحظن اختفاء الانتفاخ وثقل القولون في الأسبوع الأول</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">89%</span>
+        <span class="stat-label">سجلن تحسناً ملموساً في صفاء ونضارة بشرة الوجه</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">خلاصة طبيعية نقية خالية من الملينات الكيميائية والسكر</span>
+      </div>
+    </div>
+  </div>
+</section>

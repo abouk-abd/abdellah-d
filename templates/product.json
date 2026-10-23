@@ -1,0 +1,46 @@
+{
+  "name": "Product template",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "enable_quick_cod_form": true,
+        "whatsapp_number": "+212636460996"
+      }
+    },
+    "clinical_proof": {
+      "type": "clinical-proof",
+      "settings": {
+        "heading": "نتائج سريرية ومخبرية مثبتة"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "أكملي روتينك بمنتجات متناسقة"
+      }
+    },
+    "faq": {
+      "type": "product-faq",
+      "settings": {
+        "title": "الأسئلة المتكررة حول طريقة الاستعمال"
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "title": "جربي قطرات BALURIX بدون أي مخاطرة",
+        "text": "التوصيل مجاني لباب منزلك والدفع نقداً بعد المعاينة.",
+        "button_label": "طلب سريع الآن",
+        "button_link": "/cart"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "clinical_proof",
+    "recommendations",
+    "faq",
+    "cta"
+  ]
+}

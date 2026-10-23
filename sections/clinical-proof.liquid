@@ -1,0 +1,48 @@
+{% schema %}
+{
+  "name": "Clinical Proof Strip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "نتائج سريرية وتجارب مخبرية موثقة"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="balurix-clinical-proof">
+  <div class="balurix-container">
+    <div class="proof-header text-center">
+      <span class="proof-tag">🔬 دراسة سريرية على مدار 28 يوماً</span>
+      <h3 class="proof-title">{{ section.settings.heading }}</h3>
+    </div>
+
+    <div class="proof-metrics-grid">
+      <div class="metric-card">
+        <div class="metric-percentage">96%</div>
+        <div class="metric-text">
+          <strong>راحة هضمية وتراجع الانتفاخ</strong>
+          <span>أكدن اختفاء الشعور بالثقل وتراكم الغازات بعد الأسبوع الأول.</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-percentage">91%</div>
+        <div class="metric-text">
+          <strong>إشراقة طبيعية للبشرة</strong>
+          <span>سجلن تراجعاً ملحوظاً في حب الشباب الدهني وتوهجاً نضراً وملمساً ناعماً.</span>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-percentage">88%</div>
+        <div class="metric-text">
+          <strong>طاقة وانتعاش متواصل</strong>
+          <span>تحسن مستويات النشاط الصباحي ورائحة الفم المنعشة طوال النهار.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

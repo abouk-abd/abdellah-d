@@ -1,0 +1,55 @@
+{% schema %}
+{
+  "name": "Search Results",
+  "settings": []
+}
+{% endschema %}
+
+<div class="balurix-search-page">
+  <div class="balurix-container">
+    <div class="search-header text-center">
+      <h1 class="search-title">نتائج البحث</h1>
+      <form action="/search" method="get" class="search-form-inline">
+        <input 
+          type="search" 
+          name="q" 
+          value="{{ search.terms | escape }}" 
+          placeholder="ابحثي عن منتج، كلوروفيل، كولاجين، روزماري..." 
+          class="form-input search-input"
+        >
+        <button type="submit" class="btn btn-primary search-submit-btn">
+          <span>بحث</span>
+        </button>
+      </form>
+    </div>
+
+    {% if search.performed %}
+      {% if search.results_count > 0 %}
+        <p class="search-count-note text-center">تم العثور على {{ search.results_count }} نتيجة لبحثك عن "{{ search.terms }}":</p>
+        <div class="balurix-products-grid">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              {% render 'product-card', product: item %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="search-no-results text-center">
+          <p class="no-results-text">لم يتم العثور على نتائج تطابق "{{ search.terms }}".</p>
+          <p>جربي البحث بكلمات عامة مثل "كلوروفيل" أو "كولاجين" أو تصفحي باقاتنا المميزة:</p>
+          <a href="/collections/all" class="btn btn-secondary">تصفح جميع المنتجات</a>
+        </div>
+      {% endif %}
+    {% else %}
+      <div class="popular-searches-box text-center">
+        <h4>عمليات البحث الشائعة:</h4>
+        <div class="search-tags-row">
+          <a href="/search?q=كلوروفيل" class="search-tag">قطرات الكلوروفيل</a>
+          <a href="/search?q=كولاجين" class="search-tag">كولاجين بحري</a>
+          <a href="/search?q=روزماري" class="search-tag">رذاذ الروزماري</a>
+          <a href="/search?q=مغنيسيوم" class="search-tag">إكسير النوم</a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

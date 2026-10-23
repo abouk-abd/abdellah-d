@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code | default: 'ar' }}" dir="{% if request.locale.iso_code == 'fr' or request.locale.iso_code == 'en' %}ltr{% else %}rtl{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <link rel="canonical" href="{{ canonical_url }}">
+  
+  <title>
+    {{ page_title }}
+    {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+    {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+    {%- unless page_title contains 'BALURIX' %} &ndash; BALURIX Natural Care{% endunless -%}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Google Fonts: Almarai for Arabic, Poppins for Latin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Theme Stylesheet -->
+  {{ 'balurix-theme.css' | asset_url | stylesheet_tag }}
+
+  <style>
+    :root {
+      --color-forest: {{ settings.color_forest_green | default: '#0B3D2E' }};
+      --color-leaf: {{ settings.color_leaf_green | default: '#3E8E49' }};
+      --color-sage: {{ settings.color_sage_green | default: '#DCE8D9' }};
+      --color-cream: {{ settings.color_warm_cream | default: '#F8F6EF' }};
+      --color-white: {{ settings.color_white | default: '#FFFFFF' }};
+      --font-arabic: 'Almarai', system-ui, sans-serif;
+      --font-latin: 'Poppins', system-ui, sans-serif;
+    }
+    body {
+      font-family: var(--font-arabic);
+      background-color: var(--color-cream);
+      color: var(--color-forest);
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    [dir="ltr"] body {
+      font-family: var(--font-latin);
+    }
+  </style>
+
+  <!-- Required YouCan/Shopify dynamic header injection -->
+  {{ content_for_header }}
+</head>
+
+<body class="template-{{ template.name | handle }}">
+  {% section 'header' %}
+
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  <!-- WhatsApp COD Button -->
+  {% render 'whatsapp-button' %}
+
+  <!-- Theme Core JavaScript -->
+  {{ 'balurix-theme.js' | asset_url | script_tag }}
+
+  <!-- Required YouCan/Shopify dynamic footer injection -->
+  {{ content_for_footer }}
+</body>
+</html>

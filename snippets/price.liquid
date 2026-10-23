@@ -1,0 +1,29 @@
+{% comment %}
+  Renders product price
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - price: {Number} Custom price (optional)
+  - compare_at_price: {Number} Custom compare at price (optional)
+  - currency: {String} Currency suffix or prefix (default: 'د.م')
+{% endcomment %}
+
+{%- liquid
+  assign target_price = price | default: product.price | default: 289
+  assign target_compare = compare_at_price | default: product.compare_at_price | default: 350
+  assign currency_symbol = currency | default: 'د.م'
+-%}
+
+<div class="balurix-price-wrapper">
+  <span class="balurix-price-current font-bold">
+    {{ target_price }} <span class="currency">{{ currency_symbol }}</span>
+  </span>
+  {%- if target_compare > target_price -%}
+    <span class="balurix-price-compare line-through">
+      {{ target_compare }} {{ currency_symbol }}
+    </span>
+    {%- assign savings = target_compare | minus: target_price -%}
+    <span class="balurix-price-badge">
+      وفر {{ savings }} {{ currency_symbol }}
+    </span>
+  {%- endif -%}
+</div>

@@ -23,10 +23,12 @@ export default function GutReliefCheckout({ selectedPackId, onSelectPack }: GutR
   const [phoneError, setPhoneError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [orderNumber, setOrderNumber] = useState<number | null>(null);
+  const [submitError, setSubmitError] = useState('');
 
   const summary = calculateOrderSummary(selectedPackId, 1);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validateMoroccanPhone(phone)) {
@@ -35,13 +37,41 @@ export default function GutReliefCheckout({ selectedPackId, onSelectPack }: GutR
     }
 
     setPhoneError('');
+    setSubmitError('');
     setIsSubmitting(true);
 
-    // Simulate instant secure order creation
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName,
+          phone,
+          city,
+          address,
+          packId: selectedPackId,
+          packName: summary.pack.name,
+          totalPrice: summary.totalPrice,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'فشل في حفظ الطلب');
+      }
+
+      if (data.orderId) {
+        setOrderNumber(data.orderId);
+      }
       setOrderConfirmed(true);
-    }, 600);
+    } catch (err: any) {
+      console.error('Failed to save order to database:', err);
+      setSubmitError('تعذر تسجيل طلبك حالياً، يرجى المحاولة لاحقاً أو تأكيد طلبك عبر واتساب مباشرة.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const whatsappLink = buildWhatsAppOrderLink(
@@ -220,6 +250,13 @@ export default function GutReliefCheckout({ selectedPackId, onSelectPack }: GutR
                 </div>
               </div>
 
+              {submitError && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-700 font-bold flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+                  <span>{submitError}</span>
+                </div>
+              )}
+
               {/* Submit CTA */}
               <button
                 type="submit"
@@ -265,6 +302,12 @@ export default function GutReliefCheckout({ selectedPackId, onSelectPack }: GutR
               </p>
 
               <div className="bg-white p-5 rounded-2xl border border-slate-200 max-w-md mx-auto text-right text-xs space-y-2">
+                {orderNumber && (
+                  <div className="flex justify-between pb-1.5 border-b border-slate-100">
+                    <span className="text-slate-500">رقم الطلب المرجعي:</span>
+                    <span className="font-mono font-bold text-[#0B3D2E]">#{orderNumber}</span>
+                  </div>
+                )}
                 <div className="flex justify-between">
                   <span className="text-slate-500">الباقة:</span>
                   <span className="font-bold text-[#0B3D2E]">{summary.pack.name}</span>

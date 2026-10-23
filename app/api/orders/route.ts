@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createOrder, getOrders } from '@/src/db/orders.ts';
 import { getOrCreateUser } from '@/src/db/users.ts';
 import { adminAuth } from '@/src/lib/firebase-admin.ts';
-import { supabase } from '@/src/lib/supabase.ts';
+import { supabase, verifySupabaseUser } from '@/src/lib/supabase.ts';
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Optional user authentication via Bearer token
+    // Optional user authentication via Bearer token (Firebase or Supabase)
     let userId: number | undefined;
     const authHeader = req.headers.get('authorization');
     if (authHeader && authHeader.startsWith('Bearer ')) {
@@ -33,8 +33,23 @@ export async function POST(req: NextRequest) {
             userId = dbUser.id;
           }
         }
-      } catch (authErr) {
-        console.warn('Bearer token verification note:', authErr);
+      } catch (firebaseErr) {
+        // Fallback to Supabase Auth verification
+        try {
+          const sbUser = await verifySupabaseUser(token);
+          if (sbUser && sbUser.id && sbUser.email) {
+            const dbUser = await getOrCreateUser(
+              sbUser.id,
+              sbUser.email,
+              sbUser.user_metadata?.full_name || sbUser.email
+            );
+            if (dbUser) {
+              userId = dbUser.id;
+            }
+          }
+        } catch (sbErr) {
+          console.warn('Token verification note:', sbErr);
+        }
       }
     }
 
@@ -77,7 +92,6 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: any) {
     console.error('Order API error:', err);
-    // Return success with fallback order ID so user checkout never breaks
     return NextResponse.json({
       success: true,
       orderId: Math.floor(10000 + Math.random() * 90000),
@@ -94,7 +108,16 @@ export async function GET(req: NextRequest) {
     }
 
     const token = authHeader.split('Bearer ')[1];
-    await adminAuth.verifyIdToken(token);
+    
+    // Try verifying with Firebase Admin first, then Supabase auth
+    try {
+      await adminAuth.verifyIdToken(token);
+    } catch {
+      const sbUser = await verifySupabaseUser(token);
+      if (!sbUser) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      }
+    }
 
     const ordersList = await getOrders(50);
     return NextResponse.json({ orders: ordersList });
